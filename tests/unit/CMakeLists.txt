@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.10)
-project(hello_world_unit)
 
 enable_testing()
 find_package(GTest 1.8.1 REQUIRED)
