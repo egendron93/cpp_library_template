@@ -7,8 +7,11 @@ in the .devcontainer folder and is intended to be used with the [vscode devconta
 feature](https://code.visualstudio.com/docs/remote/create-dev-container).
 
 # commands w/ tests enabled
+
 - The following commands are provided as vscode tasks. For more information on vscode tasks 
 visit the [vscode task documentation](https://code.visualstudio.com/docs/editor/tasks).
+- You can run a task through Quick Open (Ctrl+P) by typing 'task', Space and the command name.
+
 ## conan install
 ```conan install -if build -o hello_world:enable_testing=True .```
 
