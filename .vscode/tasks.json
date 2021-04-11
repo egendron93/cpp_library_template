@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "conan install w/ tests",
+        "type": "shell",
+        "command": "conan install -if build -o hello_world:enable_testing=True ."
+      },
+      {
+        "label": "conan build",
+        "type": "shell",
+        "command": "conan build -if build -bf build ."
+      },
+      {
+        "label": "conan create",
+        "type": "shell",
+        "command": "conan create -tbf build -o hello_world:enable_testing=True ."
+      },
+      {
+        "label": "run unit tests",
+        "type": "shell",
+        "command": "./build/tests/unit/hello_world_unit"
+      }
+    ]
+}
