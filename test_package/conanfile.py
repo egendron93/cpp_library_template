@@ -11,5 +11,5 @@ class HelloWorldTestConan(ConanFile):
         cmake.build()
 
     def test(self):
-        os.chdir("bin")
-        self.run(".%sexample" % os.sep)
+        cmake = CMake(self)
+        self.run("ctest -VV -C %s" % cmake.build_type)

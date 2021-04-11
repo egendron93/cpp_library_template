@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.10)
 project(hello_world_test_package)
 
 if(NOT TARGET hello_world::hello_world) 
-    find_package(hello_world CONFIG REQUIRED)
+    find_package(hello_world REQUIRED)
 endif()
 
+enable_testing()
 add_executable(example
     example.cpp
 )
@@ -18,3 +19,7 @@ target_link_libraries(example PUBLIC
 include(CheckIPOSupported)
 check_ipo_supported()
 set_property(TARGET example PROPERTY INTERPROCEDURAL_OPTIMIZATION TRUE)
+
+add_test(NAME example.test_package
+    COMMAND example
+)
