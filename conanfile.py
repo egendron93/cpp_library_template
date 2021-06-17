@@ -5,7 +5,7 @@ class HelloWorldConan(ConanFile):
   version = "0.0.0"
   url = ""
   settings = "os", "compiler", "build_type", "arch"
-  generators = "cmake_find_package"
+  generators = {"cmake_find_package", "BazelDeps", "BazelToolchain"}
   options = {"enable_testing":[True, False]}
   default_options = {"enable_testing": False}
   exports_sources = {"src/**", "tests/**", "CMakeLists.txt"}

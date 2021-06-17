@@ -1,0 +1,10 @@
+# by default make targets in this package visible to all packages
+# in the cpp_library_template package group
+package(default_visibility = ["//:cpp_library_template"])
+
+cc_library(
+    name = "hello_world",
+    srcs = ["hello_world.cpp"],
+    hdrs = ["include/hello_world.hpp"],
+    strip_include_prefix = "include"
+)
