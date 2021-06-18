@@ -24,7 +24,7 @@ class HelloWorldConan(ConanFile):
     # cmake.build()
     bazel = Bazel(self)
     bazel.configure()
-    bazel.build(label="//...")
+    bazel.build(label="//...", args="--sandbox_debug")
 
   def package(self):
     self.copy("*.hpp", dst="include/", src="src/include/")

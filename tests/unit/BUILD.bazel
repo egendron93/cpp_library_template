@@ -1,5 +1,6 @@
 cc_test(
     name = "hello_world_unit",
     srcs = ["src/main.cpp", "src/hello_world_unit.cpp"],
-    deps = ["//src:hello_world", "@gtest//:gtest"]
+    deps = ["//src:hello_world", "@gtest//:gtest"],
+    linkopts = ["-l/root/.conan/data/gtest/1.8.1/_/_/package/e019a06362b932ca5d1b082b6c112aa150c88de4/lib/libgtest.a", "-lpthread"]
 )
