@@ -24,6 +24,19 @@ visit the [vscode task documentation](https://code.visualstudio.com/docs/editor/
 ### run unit tests
 ```./build/tests/unit/hello_world_unit```
 
+
+## bazel build with conan bazel generators
+- The bazel build is still experimental and has a few issues that need to be addressed.
+- There is no option to pass the conan install and build folder information to the bazel build tool.
+- The boost package has an issue with excaping quotes when its targets definitions are 
+created. This is fixed by manually adding escape characters in the boost BUILD file.
+
+### conan install
+```conan install -o hello_world:enable_testing=True```
+
+### conan build
+```conan build .```
+
 ## References
 - [SG20 Education and Recommended Videos for Teaching C++ by Christopher Di Bella](https://www.cjdb.com.au/sg20-and-videos) 
 - [Effective CMake by Daniel Pfeifer](https://youtu.be/bsXLMQ6WgIk)
