@@ -1,1 +1,11 @@
 build/
+
+conan.lock
+conanbuild.json
+conanbuildinfo.txt
+conandeps/*
+conaninfo.txt
+graph_info.json
+
+bazel**
+WORKSPACE.bazel

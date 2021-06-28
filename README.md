@@ -24,6 +24,24 @@ visit the [vscode task documentation](https://code.visualstudio.com/docs/editor/
 ### run unit tests
 ```./build/tests/unit/hello_world_unit```
 
+
+## bazel build with conan bazel generators
+- The bazel build is still experimental and has a few issues that need to be addressed.
+- There is no option to pass the conan install and build folder information to the bazel build tool.
+- The boost package has an issue with excaping quotes when its targets definitions are 
+created. This is fixed by manually adding escape characters in the boost BUILD file.
+- The gtest package cc_library target does not tranistively provide the linker with
+the precompiled library locations. A solution to this could be to add the cc_imports as
+dependencies to the gtest cc_library target.
+    - ``` deps = [":gmock_main_precompiled", "gmock_precompiled", "gtest_main_precompiled", ":gtest_precompiled"] ```
+    - Another solution could be to make the cc_import targets publicly visible. That would let the user 
+    decide wich libraries to link to.
+### conan install
+```conan install . -o hello_world:enable_testing=True```
+
+### conan build
+```conan build .```
+
 ## References
 - [SG20 Education and Recommended Videos for Teaching C++ by Christopher Di Bella](https://www.cjdb.com.au/sg20-and-videos) 
 - [Effective CMake by Daniel Pfeifer](https://youtu.be/bsXLMQ6WgIk)

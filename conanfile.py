@@ -1,11 +1,13 @@
 from conans import ConanFile, CMake
+from conan.tools.google import Bazel
 
 class HelloWorldConan(ConanFile):
   name = "hello_world"
   version = "0.0.0"
   url = ""
   settings = "os", "compiler", "build_type", "arch"
-  generators = "cmake_find_package"
+  #generators = {"cmake_find_package", "BazelDeps", "BazelToolchain"}
+  generators = {"BazelDeps", "BazelToolchain"}
   options = {"enable_testing":[True, False]}
   default_options = {"enable_testing": False}
   exports_sources = {"src/**", "tests/**", "CMakeLists.txt"}
@@ -16,10 +18,13 @@ class HelloWorldConan(ConanFile):
       self.requires.add("gtest/1.8.1")
 
   def build(self):
-    cmake = CMake(self)
-    cmake.definitions["ENABLE_TESTING"] = "ON" if self.options.enable_testing else "OFF"
-    cmake.configure()
-    cmake.build()
+    # cmake = CMake(self)
+    # cmake.definitions["ENABLE_TESTING"] = "ON" if self.options.enable_testing else "OFF"
+    # cmake.configure()
+    # cmake.build()
+    bazel = Bazel(self)
+    bazel.configure()
+    bazel.build(label="//...", args="--sandbox_debug")
 
   def package(self):
     self.copy("*.hpp", dst="include/", src="src/include/")
