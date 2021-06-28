@@ -4,7 +4,7 @@ package(default_visibility = ["//:cpp_library_template"])
 
 cc_library(
     name = "hello_world",
-    srcs = ["hello_world.cpp"],
-    hdrs = ["include/hello_world.hpp"],
+    srcs = glob(["*.cpp"]),
+    hdrs = glob(["include/*.hpp"]),
     strip_include_prefix = "include"
 )

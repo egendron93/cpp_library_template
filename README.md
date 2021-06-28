@@ -37,7 +37,7 @@ dependencies to the gtest cc_library target.
     - Another solution could be to make the cc_import targets publicly visible. That would let the user 
     decide wich libraries to link to.
 ### conan install
-```conan install -o hello_world:enable_testing=True```
+```conan install . -o hello_world:enable_testing=True```
 
 ### conan build
 ```conan build .```
