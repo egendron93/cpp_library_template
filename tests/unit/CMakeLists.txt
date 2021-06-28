@@ -9,6 +9,7 @@ endif()
 
 add_executable(hello_world_unit
     src/hello_world_unit.cpp
+    src/string_reversal_unit.cpp
     src/main.cpp
 )
 
