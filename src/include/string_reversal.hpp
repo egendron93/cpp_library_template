@@ -16,11 +16,17 @@
 
 namespace string_reversal {
 
-constexpr auto kPrintableAsciiCount = size_t{95};
+namespace detail {
+
+constexpr auto kPrintableAsciiCount = int{95};
+constexpr auto kMinStringSize = int{1};
+constexpr auto kMaxStringSize = int{100000};
 
 constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters();
 
 bool IsPrintableAsciiCharacters(std::string& s);
+
+} /* namespace detail */
 
 /**
  * @brief Reverses a string of characters.
