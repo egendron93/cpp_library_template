@@ -15,15 +15,23 @@
 #include <string>
 
 namespace string_reversal {
-
 namespace detail {
 
 constexpr auto kPrintableAsciiCount = int{95};
 constexpr auto kMinStringSize = int{1};
 constexpr auto kMaxStringSize = int{100000};
 
+/**
+ * @brief Creates an array representing all of the printable ascii characters.
+ * @link https://en.cppreference.com/w/cpp/language/ascii
+ */
 constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters();
 
+/**
+ * @brief Checks if string consists of all printable ascii characters.
+ * @return true if all characters are printable ascii. 
+ * @return false if any character is not printable ascii.
+ */
 bool IsPrintableAsciiCharacters(std::string& s);
 
 } /* namespace detail */

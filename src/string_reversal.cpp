@@ -14,7 +14,7 @@ namespace detail {
 constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters() {
     auto printable_ascii = std::array<char, kPrintableAsciiCount>{};
     auto index = size_t{0};
-    // https://en.cppreference.com/w/cpp/language/ascii
+
     for (char i = ' '; i <= '~'; ++i) {
         printable_ascii[index] = i;
         index++;
