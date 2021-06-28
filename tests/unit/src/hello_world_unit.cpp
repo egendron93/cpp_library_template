@@ -4,12 +4,12 @@
  * @date 2020-07-01
  */
 
- #include <gtest/gtest.h>
+#include <gtest/gtest.h>
 
- #include <hello_world.hpp>
+#include <hello_world.hpp>
 
- using namespace hello;
+using namespace hello;
 
- TEST(HelloWorldUnit, GetHelloWorldString_ReturnsHelloWorld) {
-     ASSERT_EQ("hello world", GetHelloWorldString());
- }
+TEST(HelloWorldUnit, GetHelloWorldString_ReturnsHelloWorld) {
+    ASSERT_EQ("hello world", GetHelloWorldString());
+}
