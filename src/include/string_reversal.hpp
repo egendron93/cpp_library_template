@@ -32,7 +32,7 @@ constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters();
  * @return true if all characters are printable ascii. 
  * @return false if any character is not printable ascii.
  */
-bool IsPrintableAsciiCharacters(std::string& s);
+bool IsPrintableAsciiCharacters(const std::string& s);
 
 } /* namespace detail */
 

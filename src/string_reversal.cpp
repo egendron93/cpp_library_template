@@ -25,10 +25,11 @@ constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters() {
 constexpr std::array<char, kPrintableAsciiCount> kPrintableAsciiCharacters{
     GetPrintableAsciiCharacters()};
 
-bool IsPrintableAsciiCharacters(std::string& s) {
+bool IsPrintableAsciiCharacters(const std::string& s) {
+    if (s.empty()) return false;
     const auto printable_ascii = std::string{kPrintableAsciiCharacters.begin(), 
                                              kPrintableAsciiCharacters.end()};
-    return s.find_first_not_of(printable_ascii) == std::string_view::npos;
+    return s.find_first_not_of(printable_ascii) == std::string::npos;
 }
 
 } /* namespace detail */
