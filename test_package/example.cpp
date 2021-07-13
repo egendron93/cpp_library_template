@@ -9,6 +9,6 @@
 #include <hello_world.hpp>
 
 int main(int argc, char** argv) {
-    std::cout << hello::GetHelloWorldString() << std::endl;
-    return 0;
+  std::cout << hello::GetHelloWorldString() << std::endl;
+  return 0;
 }

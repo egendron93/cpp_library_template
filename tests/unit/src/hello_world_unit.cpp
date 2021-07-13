@@ -11,5 +11,5 @@
 using namespace hello;
 
 TEST(HelloWorldUnit, GetHelloWorldString_ReturnsHelloWorld) {
-    ASSERT_EQ("hello world", GetHelloWorldString());
+  ASSERT_EQ("hello world", GetHelloWorldString());
 }

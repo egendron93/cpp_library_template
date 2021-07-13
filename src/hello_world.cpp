@@ -7,8 +7,6 @@
 
 namespace hello {
 
-std::string GetHelloWorldString() {
-    return "hello world";
-}
+std::string GetHelloWorldString() { return "hello world"; }
 
 } /* namespace hello */

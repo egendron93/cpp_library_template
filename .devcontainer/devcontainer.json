@@ -6,6 +6,7 @@
 	"extensions": [
 		"llvm-vs-code-extensions.vscode-clangd",
 		"twxs.cmake",
-		"ms-python.python"
+		"ms-python.python",
+		"xaver.clang-format"
 	]
 }

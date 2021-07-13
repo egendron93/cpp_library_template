@@ -3,8 +3,8 @@
  * @date 2020-06-20
  */
 
- #ifndef HELLO_WORLD_HPP
- #define HELLO_WORLD_HPP
+#ifndef HELLO_WORLD_HPP
+#define HELLO_WORLD_HPP
 
 #include <string>
 
@@ -17,4 +17,4 @@ std::string GetHelloWorldString();
 
 } /* namespace hello */
 
- #endif /* HELLO_WORLD_HPP */
+#endif /* HELLO_WORLD_HPP */
