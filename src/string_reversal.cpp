@@ -22,14 +22,13 @@ constexpr std::array<char, kPrintableAsciiCount> GetPrintableAsciiCharacters() {
     return printable_ascii;
 }
 
-constexpr std::array<char, kPrintableAsciiCount> kPrintableAsciiCharacters{
-    GetPrintableAsciiCharacters()};
-
 bool IsPrintableAsciiCharacters(const std::string& s) {
     if (s.empty()) return false;
-    const auto printable_ascii = std::string{kPrintableAsciiCharacters.begin(), 
-                                             kPrintableAsciiCharacters.end()};
-    return s.find_first_not_of(printable_ascii) == std::string::npos;
+    constexpr auto printable_ascii_chars = std::array<char, kPrintableAsciiCount>{
+        GetPrintableAsciiCharacters()};
+    const auto ascii_compare = std::string{printable_ascii_chars.begin(), 
+                                             printable_ascii_chars.end()};
+    return s.find_first_not_of(ascii_compare) == std::string::npos;
 }
 
 } /* namespace detail */
