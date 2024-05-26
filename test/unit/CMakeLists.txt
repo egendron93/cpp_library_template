@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 enable_testing()
-find_package(GTest 1.8.1 REQUIRED)
+find_package(GTest 1.14.0 REQUIRED)
 
 if(NOT TARGET hello_world::hello_world) 
     find_package(hello_world CONFIG REQUIRED)
@@ -17,7 +17,7 @@ target_compile_features(hello_world_unit PUBLIC cxx_std_20)
 
 target_link_libraries(hello_world_unit PUBLIC 
     hello_world::hello_world
-    GTest::GTest
+    gtest::gtest
 )
 
 include(CheckIPOSupported)

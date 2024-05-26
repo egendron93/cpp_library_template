@@ -2,19 +2,19 @@
     "version": "2.0.0",
     "tasks": [
       {
-        "label": "conan install w/ tests",
+        "label": "conan install",
         "type": "shell",
-        "command": "conan install -if build -o hello_world:enable_testing=True ."
+        "command": "conan install . --name hello_world --version 1.0.0 --user hello --channel stable --build missing"
       },
       {
         "label": "conan build",
         "type": "shell",
-        "command": "conan build -if build -bf build ."
+        "command": "conan build ."
       },
       {
         "label": "conan create",
         "type": "shell",
-        "command": "conan create -tbf build -o hello_world:enable_testing=True ."
+        "command": "conan create . -s build_type=Release"
       },
       {
         "label": "run unit tests",
