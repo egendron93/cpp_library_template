@@ -14,7 +14,7 @@
       {
         "label": "conan create",
         "type": "shell",
-        "command": "conan create . -s build_type=Release"
+        "command": "conan create . -s build_type=Release --build missing"
       },
       {
         "label": "run unit tests",

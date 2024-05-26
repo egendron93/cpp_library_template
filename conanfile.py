@@ -37,10 +37,6 @@ class helloWorldRecipe(ConanFile):
         cmake.configure()
         cmake.build()
 
-    def test(self):
-        cmake = CMake(self)
-        cmake.test()
-
     def package(self):
         cmake = CMake(self)
         cmake.install()
