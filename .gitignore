@@ -9,3 +9,5 @@ graph_info.json
 
 bazel**
 WORKSPACE.bazel
+/.cache
+compile_commands.json

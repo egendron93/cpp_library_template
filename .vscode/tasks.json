@@ -2,6 +2,16 @@
     "version": "2.0.0",
     "tasks": [
       {
+        "label": "conan install",
+        "type": "shell",
+        "command": "conan install . --name hello_world --version 1.0.0 --user hello --channel stable --build missing"
+      },
+      {
+        "label": "clangd compile commands symlink (Release)",
+        "type": "shell",
+        "command": "ln -s ${workspaceFolder}/build/Release/compile_commands.json ${workspaceFolder}"
+      },
+      {
         "label": "conan create",
         "type": "shell",
         "command": "conan create . -s build_type=Release --build missing"
