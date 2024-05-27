@@ -1,15 +1,26 @@
-from conans import ConanFile, CMake
 import os
 
-class HelloWorldTestConan(ConanFile):
+from conan import ConanFile
+from conan.tools.cmake import CMake, cmake_layout
+from conan.tools.build import can_run
+
+
+class helloWorldTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    generators = "cmake_find_package"
+    generators = "CMakeDeps", "CMakeToolchain"
+
+    def requirements(self):
+        self.requires(self.tested_reference_str)
 
     def build(self):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
 
+    def layout(self):
+        cmake_layout(self)
+
     def test(self):
-        cmake = CMake(self)
-        self.run("ctest -VV -C %s" % cmake.build_type)
+        if can_run(self):
+            cmd = os.path.join(self.cpp.build.bindir, "example")
+            self.run(cmd, env="conanrun")
