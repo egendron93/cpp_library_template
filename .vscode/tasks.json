@@ -2,24 +2,14 @@
     "version": "2.0.0",
     "tasks": [
       {
-        "label": "conan install",
-        "type": "shell",
-        "command": "conan install . --name hello_world --version 1.0.0 --user hello --channel stable --build missing"
-      },
-      {
-        "label": "conan build",
-        "type": "shell",
-        "command": "conan build ."
-      },
-      {
         "label": "conan create",
         "type": "shell",
         "command": "conan create . -s build_type=Release --build missing"
       },
       {
-        "label": "run unit tests",
+        "label": "conan create (no tests)",
         "type": "shell",
-        "command": "./build/tests/unit/hello_world_unit"
+        "command": "conan create . -s build_type=Release -c tools.build:skip_test=True --build missing"
       }
     ]
 }

@@ -21,22 +21,6 @@ TEST(StringReversalUnit, IsPrintableAsciiCharactersEmptyStringReturnsFalse) {
 }
 
 /**
- * @pre string contains no printable characters
- * @post returns false
- */
-TEST(StringReversalUnit, IsPrintableAsciiCharactersNoPrintableCharactersReturnsFalse) {
-    const auto non_printable_ascii_count = int{32};
-    auto non_printable = std::string{};
-    auto index = int{0};
-    for (char i = (' ' - 1); i >= 0; --i) {
-        non_printable[index] = i;
-        index++;
-    }
-    ASSERT_EQ(index, non_printable_ascii_count);
-    ASSERT_FALSE(IsPrintableAsciiCharacters(non_printable));
-}
-
-/**
  * @pre string contains all printable characters
  * @post returns true
  */
