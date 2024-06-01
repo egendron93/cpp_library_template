@@ -8,8 +8,8 @@ class helloWorldRecipe(ConanFile):
     version = "1.0.0"
 
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False], "enable_testing": [True, False]}
-    default_options = {"shared": False, "fPIC": True, "enable_testing": False}
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = {"shared": False, "fPIC": True}
 
     exports_sources = "CMakeLists.txt", "src/*", "include/*", "tests/*"
 

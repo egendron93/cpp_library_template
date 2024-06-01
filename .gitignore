@@ -11,3 +11,4 @@ bazel**
 WORKSPACE.bazel
 /.cache
 compile_commands.json
+.DS_Store
