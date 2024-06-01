@@ -1,6 +1,0 @@
-cc_test(
-    name = "hello_world_unit",
-    srcs = glob(["*.cpp"]),
-    deps = ["//src:hello_world", "@gtest//:gtest"],
-    linkopts = ["-lpthread"]
-)

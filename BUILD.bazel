@@ -1,8 +1,0 @@
-# package groups can be referenced in visibility attributes
-package_group(
-    name = "cpp_library_template",
-    packages = [
-        "//src",
-        "//tests/..."
-    ]
-)
