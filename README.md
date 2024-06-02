@@ -1,7 +1,23 @@
 # cpp_library_template
 A modern implementation of a cpp library that uses cmake and conan2.
 
-## References
+## getting started
+refer to [vscode tasks](./.vscode/tasks.json) for full commands
+
+### initialize environment
+tasks to run before library source code or conan recipe development
+- create default conan profile
+
+### source code development
+- clangd compile commands symlink
+- conan install
+- conan build
+
+### conan recipe development
+- conan create
+- conan create (no tests)
+
+## references
 - [SG20 Education and Recommended Videos for Teaching C++ by Christopher Di Bella](https://www.cjdb.com.au/sg20-and-videos) 
 - [Effective CMake by Daniel Pfeifer](https://youtu.be/bsXLMQ6WgIk)
 - [Modern CMake for modular design by Mathieu Ropert](https://youtu.be/ztrnb-bVVPo)

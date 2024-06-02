@@ -14,20 +14,27 @@
         "problemMatcher": []
       },
       {
-        "label": "conan install",
-        "type": "shell",
-        "command": "conan install . --name hello_world --version 1.0.0 --user hello --channel stable --build missing"
-      },
-      {
         "label": "conan create",
         "type": "shell",
-        "command": "conan create . -s build_type=Release --build missing",
+        "command": "conan create . --build missing",
         "problemMatcher": []
       },
       {
         "label": "conan create (no tests)",
         "type": "shell",
-        "command": "conan create . -s build_type=Release -c tools.build:skip_test=True --build missing"
+        "command": "conan create . -c tools.build:skip_test=True --build missing"
+      },
+      {
+        "label": "conan install",
+        "type": "shell",
+        "command": "conan install . --name hello_world --version 1.0.0 --user hello --channel stable --build missing",
+        "problemMatcher": []
+      },
+      {
+        "label": "conan build",
+        "type": "shell",
+        "command": "conan build .",
+        "problemMatcher": []
       }
     ]
 }
