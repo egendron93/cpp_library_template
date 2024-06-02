@@ -12,3 +12,4 @@ WORKSPACE.bazel
 /.cache
 compile_commands.json
 .DS_Store
+test_package/CMakeUserPresets.json
