@@ -1,18 +1,16 @@
 # cpp_library_template
-
-## getting started
 refer to [vscode tasks](./.vscode/tasks.json) for full commands
 
-### initialize environment
+## initialize environment
 tasks to run before library source code or conan recipe development
 - create default conan profile
 
-### source code development
+## source code development
 - clangd compile commands symlink
 - conan install
 - conan build
 
-### conan recipe development
+## conan recipe development
 - conan create
 - conan create (no tests)
 
