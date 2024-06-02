@@ -1,5 +1,4 @@
 # cpp_library_template
-A modern implementation of a cpp library that uses cmake and conan2.
 
 ## getting started
 refer to [vscode tasks](./.vscode/tasks.json) for full commands
