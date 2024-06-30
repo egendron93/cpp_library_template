@@ -1,3 +1,6 @@
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/egendron93/cpp_library_template)
+
+
 # cpp_library_template
 refer to [vscode tasks](./.vscode/tasks.json) for full commands
 
